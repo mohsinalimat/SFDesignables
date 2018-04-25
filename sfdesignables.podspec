@@ -7,7 +7,7 @@ Subclasses of UIView, UIButton and UITextField with support for direct storyboar
                   DESC
   s.homepage = 'https://github.com/sudofluff/sfdesignables'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
-  s.author = { 'Sudofluff' => 'jinhedev@gmail.com' }
+  s.author = { 'Sudofluff' => 'sudofluff@icloud.com' }
   s.source = { :git => 'https://github.com/sudofluff/SFDesignables.git', :tag => s.version.to_s }
   s.ios.deployment_target = '11.3'
   s.source_files = ['sfdesignables/*']
