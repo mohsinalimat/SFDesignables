@@ -128,6 +128,34 @@ import UIKit
         layer.masksToBounds = shadowRadius >= 0 ? false : true
     }
     
+    // activity indicator
+    
+    @IBInspectable open var activityIndicatorColor: UIColor = UIColor.white {
+        didSet {
+            activityIndicatorView.tintColor = activityIndicatorColor
+        }
+    }
+    
+    private var activityIndicatorView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        view.hidesWhenStopped = true
+        return view
+    }()
+    
+    open func startAnimating() {
+        activityIndicatorView.startAnimating()
+        isHidden = true
+    }
+    
+    open func stopAnimating() {
+        activityIndicatorView.stopAnimating()
+        isHidden = false
+    }
+    
+    open var isAnimating: Bool {
+        return activityIndicatorView.isAnimating
+    }
+    
     // override
     
     override open func prepareForInterfaceBuilder() {
