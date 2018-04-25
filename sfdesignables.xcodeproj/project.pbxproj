@@ -24,6 +24,7 @@
 		F505D14C2090EEEB005CBCF2 /* SFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFButton.swift; sourceTree = "<group>"; };
 		F505D14E2090EF07005CBCF2 /* SFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTextField.swift; sourceTree = "<group>"; };
 		F505D1502090FD97005CBCF2 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F505D1522090FE73005CBCF2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				F505D1502090FD97005CBCF2 /* LICENSE */,
+				F505D1522090FE73005CBCF2 /* README.md */,
 				F505D1482090D277005CBCF2 /* sfdesignables.podspec */,
 				F505D13F2090CFA1005CBCF2 /* sfdesignables */,
 				F505D13E2090CFA1005CBCF2 /* Products */,
