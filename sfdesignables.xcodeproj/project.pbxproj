@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		F505D1422090CFA1005CBCF2 /* sfdesignables.h in Headers */ = {isa = PBXBuildFile; fileRef = F505D1402090CFA1005CBCF2 /* sfdesignables.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F505D1492090D277005CBCF2 /* sfdesignables.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F505D1482090D277005CBCF2 /* sfdesignables.podspec */; };
+		F505D14B2090EEC6005CBCF2 /* SFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505D14A2090EEC6005CBCF2 /* SFView.swift */; };
+		F505D14D2090EEEB005CBCF2 /* SFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505D14C2090EEEB005CBCF2 /* SFButton.swift */; };
+		F505D14F2090EF07005CBCF2 /* SFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505D14E2090EF07005CBCF2 /* SFTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F505D13D2090CFA1005CBCF2 /* sfdesignables.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = sfdesignables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F505D1402090CFA1005CBCF2 /* sfdesignables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sfdesignables.h; sourceTree = "<group>"; };
 		F505D1412090CFA1005CBCF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F505D1482090D277005CBCF2 /* sfdesignables.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sfdesignables.podspec; sourceTree = "<group>"; };
+		F505D14A2090EEC6005CBCF2 /* SFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFView.swift; sourceTree = "<group>"; };
+		F505D14C2090EEEB005CBCF2 /* SFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFButton.swift; sourceTree = "<group>"; };
+		F505D14E2090EF07005CBCF2 /* SFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +38,7 @@
 		F505D1332090CFA1005CBCF2 = {
 			isa = PBXGroup;
 			children = (
+				F505D1482090D277005CBCF2 /* sfdesignables.podspec */,
 				F505D13F2090CFA1005CBCF2 /* sfdesignables */,
 				F505D13E2090CFA1005CBCF2 /* Products */,
 			);
@@ -48,6 +57,9 @@
 			children = (
 				F505D1402090CFA1005CBCF2 /* sfdesignables.h */,
 				F505D1412090CFA1005CBCF2 /* Info.plist */,
+				F505D14A2090EEC6005CBCF2 /* SFView.swift */,
+				F505D14E2090EF07005CBCF2 /* SFTextField.swift */,
+				F505D14C2090EEEB005CBCF2 /* SFButton.swift */,
 			);
 			path = sfdesignables;
 			sourceTree = "<group>";
@@ -95,6 +107,7 @@
 				TargetAttributes = {
 					F505D13C2090CFA1005CBCF2 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -120,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F505D1492090D277005CBCF2 /* sfdesignables.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F505D14D2090EEEB005CBCF2 /* SFButton.swift in Sources */,
+				F505D14B2090EEC6005CBCF2 /* SFView.swift in Sources */,
+				F505D14F2090EF07005CBCF2 /* SFTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +276,7 @@
 		F505D1462090CFA1005CBCF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -276,6 +294,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sudofluff.sfdesignables;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +303,7 @@
 		F505D1472090CFA1005CBCF2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
