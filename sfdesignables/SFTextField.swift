@@ -8,15 +8,15 @@
 
 import UIKit
 
-@objc protocol SDTextFieldRightButtonDelegate: NSObjectProtocol {
+@objc public protocol SDTextFieldRightButtonDelegate: NSObjectProtocol {
     @objc optional func didTapButton(_ sender: UIButton)
 }
 
-@IBDesignable class SFTextField: UITextField {
+@IBDesignable open class SFTextField: UITextField {
     
     // Animations & Physics
     
-    func jitter(repeatCount: Float, duration: TimeInterval) {
+    open func jitter(repeatCount: Float, duration: TimeInterval) {
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = duration
         animation.repeatCount = repeatCount
@@ -28,29 +28,29 @@ import UIKit
     
     // Generic UITextField & properties
     
-    weak var rightButtonDelegate: SDTextFieldRightButtonDelegate?
+    open weak var rightButtonDelegate: SDTextFieldRightButtonDelegate?
     
-    @IBInspectable var cornerRaduis: CGFloat = 0 {
+    @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRaduis
             layer.masksToBounds = cornerRaduis > 0
         }
     }
     
-    @IBInspectable var borderWith: CGFloat = 0 {
+    @IBInspectable open var borderWith: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWith
         }
     }
     
-    @IBInspectable var borderColor: UIColor = UIColor.clear {
+    @IBInspectable open var borderColor: UIColor = UIColor.clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
     }
     
     /// remark: Placeholder tint color may not be able to render correctly in storyboard.
-    @IBInspectable var placeholderTintColor: UIColor = UIColor.lightGray {
+    @IBInspectable open var placeholderTintColor: UIColor = UIColor.lightGray {
         didSet {
             attributedPlaceholder = NSAttributedString(string: placeholder != nil ? placeholder! : "", attributes: [NSAttributedStringKey.foregroundColor: placeholderTintColor])
         }
@@ -58,25 +58,25 @@ import UIKit
     
     // LeftView + UIImageView
     
-    @IBInspectable var leftImage: UIImage? {
+    @IBInspectable open var leftImage: UIImage? {
         didSet {
             updateLeftView()
         }
     }
     
-    @IBInspectable var leftImageViewSize: CGFloat = 20 {
+    @IBInspectable open var leftImageViewSize: CGFloat = 20 {
         didSet {
             updateLeftView()
         }
     }
     
-    @IBInspectable var leftImageTintColor: UIColor? = UIColor.white {
+    @IBInspectable open var leftImageTintColor: UIColor? = UIColor.white {
         didSet {
             updateLeftView()
         }
     }
     
-    @IBInspectable var leftImagePadding: CGFloat = 0 {
+    @IBInspectable open var leftImagePadding: CGFloat = 0 {
         didSet {
             updateLeftView()
         }
@@ -99,25 +99,25 @@ import UIKit
     
     // RightView + UIButton
     
-    @IBInspectable var rightButtonImage: UIImage? {
+    @IBInspectable open var rightButtonImage: UIImage? {
         didSet {
             updateRightView()
         }
     }
     
-    @IBInspectable var rightButtonPadding: CGFloat = 0 {
+    @IBInspectable open var rightButtonPadding: CGFloat = 0 {
         didSet {
             updateRightView()
         }
     }
     
-    @IBInspectable var rightButtonSize: CGFloat = 20 {
+    @IBInspectable open var rightButtonSize: CGFloat = 20 {
         didSet {
             updateRightView()
         }
     }
     
-    @IBInspectable var rightButtonTintColor: UIColor? = UIColor.white {
+    @IBInspectable open var rightButtonTintColor: UIColor? = UIColor.white {
         didSet {
             updateRightView()
         }
@@ -143,7 +143,7 @@ import UIKit
         }
     }
     
-    @objc func rightButtonTapped() {
+    @objc open func rightButtonTapped() {
         if let button = rightButton, let rightButtonDelegate = rightButtonDelegate {
             rightButtonDelegate.didTapButton!(button)
         }
@@ -151,33 +151,33 @@ import UIKit
     
     // GradientLayer
     
-    @IBInspectable var startColor: UIColor = UIColor.lightGray {
+    @IBInspectable open var startColor: UIColor = UIColor.lightGray {
         didSet {
             gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         }
     }
     
-    @IBInspectable var endColor: UIColor = UIColor.darkGray {
+    @IBInspectable open var endColor: UIColor = UIColor.darkGray {
         didSet {
             gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         }
     }
     
-    @IBInspectable var startPoint: CGPoint = CGPoint(x: 0.5, y: 0.0) {
+    @IBInspectable open var startPoint: CGPoint = CGPoint(x: 0.5, y: 0.0) {
         didSet {
             gradientLayer.startPoint = startPoint
         }
     }
     
-    @IBInspectable var endPoint: CGPoint = CGPoint(x: 0.5, y: 1.0) {
+    @IBInspectable open var endPoint: CGPoint = CGPoint(x: 0.5, y: 1.0) {
         didSet {
             gradientLayer.endPoint = endPoint
         }
     }
     
-    var gradientLayer = CAGradientLayer()
+    open var gradientLayer = CAGradientLayer()
     
-    func setupGradientLayer() {
+    private func setupGradientLayer() {
         gradientLayer.frame = self.bounds
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         gradientLayer.startPoint = startPoint
@@ -187,7 +187,7 @@ import UIKit
     
     // shadow
     
-    @IBInspectable var shadowColor: UIColor? {
+    @IBInspectable open var shadowColor: UIColor? {
         get {
             if let color = layer.shadowColor {
                 return UIColor(cgColor: color)
@@ -203,19 +203,19 @@ import UIKit
         }
     }
     
-    @IBInspectable var shadowOpacity: Float = 0 {
+    @IBInspectable open var shadowOpacity: Float = 0 {
         didSet {
             layer.shadowOpacity = shadowOpacity
         }
     }
     
-    @IBInspectable var shadowRadius: CGFloat = 0 {
+    @IBInspectable open var shadowRadius: CGFloat = 0 {
         didSet {
             layer.shadowRadius = shadowRadius
         }
     }
     
-    @IBInspectable var shadowOffset: CGSize = CGSize.zero {
+    @IBInspectable open var shadowOffset: CGSize = CGSize.zero {
         didSet {
             layer.shadowOffset = shadowOffset
         }
@@ -228,7 +228,7 @@ import UIKit
     
     // activity indicator
     
-    @IBInspectable var activityIndicatorColor: UIColor = UIColor.white {
+    @IBInspectable open var activityIndicatorColor: UIColor = UIColor.white {
         didSet {
             activityIndicatorView.tintColor = activityIndicatorColor
         }
@@ -240,29 +240,29 @@ import UIKit
         return view
     }()
     
-    func startAnimating() {
+    open func startAnimating() {
         activityIndicatorView.startAnimating()
         rightButton?.isHidden = true
     }
     
-    func stopAnimating() {
+    open func stopAnimating() {
         activityIndicatorView.stopAnimating()
         rightButton?.isHidden = false
     }
     
-    var isAnimating: Bool {
+    open var isAnimating: Bool {
         return activityIndicatorView.isAnimating
     }
     
     // Lifecycle
     
-    override func prepareForInterfaceBuilder() {
+    override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setupGradientLayer()
         setupShadow()
     }
     
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         setupGradientLayer()
         setupShadow()

@@ -8,76 +8,76 @@
 
 import UIKit
 
-@IBDesignable class SFButton: UIButton {
+@IBDesignable open class SFButton: UIButton {
     
     // UIButton apis
     
-    @IBInspectable var cornerRaduis: CGFloat = 0 {
+    @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRaduis
             layer.masksToBounds = cornerRaduis > 0
         }
     }
     
-    @IBInspectable var borderWidth: CGFloat = 0 {
+    @IBInspectable open var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable var borderColor: UIColor = UIColor.clear {
+    @IBInspectable open var borderColor: UIColor = UIColor.clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
     }
     
-    override var isSelected: Bool {
+    override open var isSelected: Bool {
         didSet {
             self.setSelected(isSelected, animated: true)
         }
     }
     
-    override var isHighlighted: Bool {
+    override open var isHighlighted: Bool {
         didSet {
             self.setHighlighted(isHighlighted, animated: true)
         }
     }
     
-    func setSelected(_ selected: Bool, animated: Bool) {
+    open func setSelected(_ selected: Bool, animated: Bool) {
         self.alpha = selected ? 0.8 : 1.0
     }
     
-    func setHighlighted(_ highlighted: Bool, animated: Bool) {
+    open func setHighlighted(_ highlighted: Bool, animated: Bool) {
         self.alpha = highlighted ? 0.7 : 1.0
     }
     
     // gradient colors
     
-    @IBInspectable var startColor: UIColor = UIColor.lightGray {
+    @IBInspectable open var startColor: UIColor = UIColor.lightGray {
         didSet {
             gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         }
     }
     
-    @IBInspectable var endColor: UIColor = UIColor.darkGray {
+    @IBInspectable open var endColor: UIColor = UIColor.darkGray {
         didSet {
             gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         }
     }
     
-    @IBInspectable var startPoint: CGPoint = CGPoint(x: 0.5, y: 0.0) {
+    @IBInspectable open var startPoint: CGPoint = CGPoint(x: 0.5, y: 0.0) {
         didSet {
             gradientLayer.startPoint = startPoint
         }
     }
     
-    @IBInspectable var endPoint: CGPoint = CGPoint(x: 0.5, y: 1.0) {
+    @IBInspectable open var endPoint: CGPoint = CGPoint(x: 0.5, y: 1.0) {
         didSet {
             gradientLayer.endPoint = endPoint
         }
     }
     
-    var gradientLayer = CAGradientLayer()
+    open var gradientLayer = CAGradientLayer()
     
     private func setupGradientLayer() {
         gradientLayer.frame = self.bounds
@@ -89,7 +89,7 @@ import UIKit
     
     // shadow
     
-    @IBInspectable var shadowColor: UIColor? {
+    @IBInspectable open var shadowColor: UIColor? {
         get {
             if let color = layer.shadowColor {
                 return UIColor(cgColor: color)
@@ -105,19 +105,19 @@ import UIKit
         }
     }
     
-    @IBInspectable var shadowOpacity: Float = 0 {
+    @IBInspectable open var shadowOpacity: Float = 0 {
         didSet {
             layer.shadowOpacity = shadowOpacity
         }
     }
     
-    @IBInspectable var shadowRadius: CGFloat = 0 {
+    @IBInspectable open var shadowRadius: CGFloat = 0 {
         didSet {
             layer.shadowRadius = shadowRadius
         }
     }
     
-    @IBInspectable var shadowOffset: CGSize = CGSize.zero {
+    @IBInspectable open var shadowOffset: CGSize = CGSize.zero {
         didSet {
             layer.shadowOffset = shadowOffset
         }
@@ -130,13 +130,13 @@ import UIKit
     
     // override
     
-    override func prepareForInterfaceBuilder() {
+    override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setupGradientLayer()
         setupShadow()
     }
     
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         setupGradientLayer()
         setupShadow()
