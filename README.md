@@ -1,6 +1,6 @@
 #  README
 
-_SFDesignables is a collection of custom UIView subclasses that come with support for storyboard._
+_SFDesignables is a collection of custom UIView subclasses that come with support for storyboard. Currently it supports SFView, SFTextField, SFButton._
 
 ## Getting started
 
