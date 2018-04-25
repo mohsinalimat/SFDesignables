@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name = "SFDesignables"
+  s.name = "sfdesignables"
   s.version = '0.1.0'
   s.summary = 'A collection of iOS @designable classes'
   s.description = <<-DESC
