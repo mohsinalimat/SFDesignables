@@ -1,14 +1,16 @@
 //
-//  SFView.swift
+//  SFButton.swift
 //  ibdesignable
 //
-//  Created by sudofluff on 3/19/18.
+//  Created by sudofluff on 4/2/18.
 //  Copyright © 2018 sudofluff. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable open class SFView: UIView {
+@IBDesignable open class SFButton: UIButton {
+    
+    // UIButton apis
     
     @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
@@ -28,6 +30,28 @@ import UIKit
             layer.borderColor = borderColor.cgColor
         }
     }
+    
+    override open var isSelected: Bool {
+        didSet {
+            self.setSelected(isSelected, animated: true)
+        }
+    }
+    
+    override open var isHighlighted: Bool {
+        didSet {
+            self.setHighlighted(isHighlighted, animated: true)
+        }
+    }
+    
+    open func setSelected(_ selected: Bool, animated: Bool) {
+        self.alpha = selected ? 0.8 : 1.0
+    }
+    
+    open func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        self.alpha = highlighted ? 0.7 : 1.0
+    }
+    
+    // gradient colors
     
     @IBInspectable open var startColor: UIColor = UIColor.lightGray {
         didSet {
@@ -56,32 +80,14 @@ import UIKit
     open var gradientLayer = CAGradientLayer()
     
     private func setupGradientLayer() {
+        gradientLayer.frame = self.bounds
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         gradientLayer.startPoint = startPoint
-        gradientLayer.frame = self.bounds
         gradientLayer.endPoint = endPoint
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    open func flash(delay: TimeInterval, duration: TimeInterval) {
-        UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-            self.alpha = 1.0
-        }) { (completed: Bool) in
-            UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseOut, animations: {
-                self.alpha = 0.0
-            }, completion: nil)
-        }
-    }
-    
-    open func jitter(repeatCount: Float, duration: TimeInterval) {
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = duration
-        animation.repeatCount = repeatCount
-        animation.autoreverses = true
-        animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 5.0, y: self.center.y))
-        animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 5.0, y: self.center.y))
-        layer.add(animation, forKey: "position")
-    }
+    // shadow
     
     @IBInspectable open var shadowColor: UIColor? {
         get {

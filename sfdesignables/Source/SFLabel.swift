@@ -1,16 +1,14 @@
 //
-//  SFButton.swift
+//  SFLabel.swift
 //  ibdesignable
 //
-//  Created by sudofluff on 4/2/18.
+//  Created by sudofluff on 4/25/18.
 //  Copyright © 2018 sudofluff. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable open class SFButton: UIButton {
-    
-    // UIButton apis
+@IBDesignable open class SFLabel: UILabel {
     
     @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
@@ -30,28 +28,6 @@ import UIKit
             layer.borderColor = borderColor.cgColor
         }
     }
-    
-    override open var isSelected: Bool {
-        didSet {
-            self.setSelected(isSelected, animated: true)
-        }
-    }
-    
-    override open var isHighlighted: Bool {
-        didSet {
-            self.setHighlighted(isHighlighted, animated: true)
-        }
-    }
-    
-    open func setSelected(_ selected: Bool, animated: Bool) {
-        self.alpha = selected ? 0.8 : 1.0
-    }
-    
-    open func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        self.alpha = highlighted ? 0.7 : 1.0
-    }
-    
-    // gradient colors
     
     @IBInspectable open var startColor: UIColor = UIColor.lightGray {
         didSet {
@@ -77,19 +53,23 @@ import UIKit
         }
     }
     
+    @IBInspectable open var maskToLayer: Bool = false {
+        didSet {
+            self.layer.mask = self.maskToLayer ? gradientLayer : nil
+        }
+    }
+    
     open var gradientLayer = CAGradientLayer()
     
     private func setupGradientLayer() {
-        gradientLayer.frame = self.bounds
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         gradientLayer.startPoint = startPoint
+        gradientLayer.frame = self.bounds
         gradientLayer.endPoint = endPoint
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    // shadow
-    
-    @IBInspectable open var shadowColor: UIColor? {
+    @IBInspectable open var viewShadowColor: UIColor? {
         get {
             if let color = layer.shadowColor {
                 return UIColor(cgColor: color)
@@ -117,9 +97,9 @@ import UIKit
         }
     }
     
-    @IBInspectable open var shadowOffset: CGSize = CGSize.zero {
+    @IBInspectable open var viewShadowOffset: CGSize = CGSize.zero {
         didSet {
-            layer.shadowOffset = shadowOffset
+            layer.shadowOffset = viewShadowOffset
         }
     }
     
@@ -128,32 +108,34 @@ import UIKit
         layer.masksToBounds = shadowRadius >= 0 ? false : true
     }
     
-    // activity indicator
+    open var textLayer = CATextLayer()
     
-    @IBInspectable open var activityIndicatorColor: UIColor = UIColor.white {
+    @IBInspectable open var hoverText: String? {
         didSet {
-            activityIndicatorView.tintColor = activityIndicatorColor
+            if let text = hoverText {
+                textLayer.string = text
+            }
         }
     }
     
-    private var activityIndicatorView: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        view.hidesWhenStopped = true
-        return view
-    }()
-    
-    open func startAnimating() {
-        activityIndicatorView.startAnimating()
-        isHidden = true
-    }
-    
-    open func stopAnimating() {
-        activityIndicatorView.stopAnimating()
-        isHidden = false
-    }
-    
-    open var isAnimating: Bool {
-        return activityIndicatorView.isAnimating
+    private func setupTextLayer() {
+        textLayer.foregroundColor = textColor.cgColor
+        textLayer.fontSize = font.pointSize
+        textLayer.font = font
+        switch textAlignment {
+        case .center:
+            textLayer.alignmentMode = kCAAlignmentCenter
+        case .justified:
+            textLayer.alignmentMode = kCAAlignmentJustified
+        case .left:
+            textLayer.alignmentMode = kCAAlignmentLeft
+        case .right:
+            textLayer.alignmentMode = kCAAlignmentRight
+        case .natural:
+            textLayer.alignmentMode = kCAAlignmentNatural
+        }
+        layer.frame = frame
+        layer.insertSublayer(layer, at: 1)
     }
     
     // override
@@ -162,12 +144,13 @@ import UIKit
         super.prepareForInterfaceBuilder()
         setupGradientLayer()
         setupShadow()
+        setupTextLayer()
     }
     
     override open func layoutSubviews() {
         super.layoutSubviews()
         setupGradientLayer()
         setupShadow()
+        setupTextLayer()
     }
-    
 }

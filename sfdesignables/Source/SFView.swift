@@ -1,14 +1,14 @@
 //
-//  SFLabel.swift
+//  SFView.swift
 //  ibdesignable
 //
-//  Created by sudofluff on 4/25/18.
+//  Created by sudofluff on 3/19/18.
 //  Copyright © 2018 sudofluff. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable open class SFLabel: UILabel {
+@IBDesignable open class SFView: UIView {
     
     @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
@@ -63,7 +63,27 @@ import UIKit
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    @IBInspectable open var viewShadowColor: UIColor? {
+    open func flash(delay: TimeInterval, duration: TimeInterval) {
+        UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.alpha = 1.0
+        }) { (completed: Bool) in
+            UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                self.alpha = 0.0
+            }, completion: nil)
+        }
+    }
+    
+    open func jitter(repeatCount: Float, duration: TimeInterval) {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = duration
+        animation.repeatCount = repeatCount
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 5.0, y: self.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 5.0, y: self.center.y))
+        layer.add(animation, forKey: "position")
+    }
+    
+    @IBInspectable open var shadowColor: UIColor? {
         get {
             if let color = layer.shadowColor {
                 return UIColor(cgColor: color)
@@ -91,9 +111,9 @@ import UIKit
         }
     }
     
-    @IBInspectable open var viewShadowOffset: CGSize = CGSize.zero {
+    @IBInspectable open var shadowOffset: CGSize = CGSize.zero {
         didSet {
-            layer.shadowOffset = viewShadowOffset
+            layer.shadowOffset = shadowOffset
         }
     }
     
@@ -109,10 +129,11 @@ import UIKit
         setupGradientLayer()
         setupShadow()
     }
-    
+        
     override open func layoutSubviews() {
         super.layoutSubviews()
         setupGradientLayer()
         setupShadow()
     }
+    
 }
