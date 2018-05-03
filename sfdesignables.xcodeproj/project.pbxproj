@@ -7,28 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F505D1422090CFA1005CBCF2 /* sfdesignables.h in Headers */ = {isa = PBXBuildFile; fileRef = F505D1402090CFA1005CBCF2 /* sfdesignables.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F505D1492090D277005CBCF2 /* sfdesignables.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F505D1482090D277005CBCF2 /* sfdesignables.podspec */; };
-		F505D14B2090EEC6005CBCF2 /* SFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505D14A2090EEC6005CBCF2 /* SFView.swift */; };
-		F505D14D2090EEEB005CBCF2 /* SFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505D14C2090EEEB005CBCF2 /* SFButton.swift */; };
-		F505D14F2090EF07005CBCF2 /* SFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505D14E2090EF07005CBCF2 /* SFTextField.swift */; };
-		F505D1512090FD97005CBCF2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F505D1502090FD97005CBCF2 /* LICENSE */; };
+		F557E6912092181A004ECBD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6902092181A004ECBD8 /* AppDelegate.swift */; };
+		F557E6932092181A004ECBD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6922092181A004ECBD8 /* ViewController.swift */; };
+		F557E6962092181A004ECBD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F557E6942092181A004ECBD8 /* Main.storyboard */; };
+		F557E6982092181D004ECBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F557E6972092181D004ECBD8 /* Assets.xcassets */; };
+		F557E69B2092181D004ECBD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F557E6992092181D004ECBD8 /* LaunchScreen.storyboard */; };
+		F557E6A720921869004ECBD8 /* SFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6A220921869004ECBD8 /* SFView.swift */; };
+		F557E6A820921869004ECBD8 /* SFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6A320921869004ECBD8 /* SFButton.swift */; };
+		F557E6A920921869004ECBD8 /* SFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6A420921869004ECBD8 /* SFLabel.swift */; };
+		F557E6AA20921869004ECBD8 /* SFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6A520921869004ECBD8 /* SFImageView.swift */; };
+		F557E6AB20921869004ECBD8 /* SFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6A620921869004ECBD8 /* SFTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F505D13D2090CFA1005CBCF2 /* sfdesignables.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = sfdesignables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F505D1402090CFA1005CBCF2 /* sfdesignables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sfdesignables.h; sourceTree = "<group>"; };
-		F505D1412090CFA1005CBCF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F505D1482090D277005CBCF2 /* sfdesignables.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sfdesignables.podspec; sourceTree = "<group>"; };
-		F505D14A2090EEC6005CBCF2 /* SFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFView.swift; sourceTree = "<group>"; };
-		F505D14C2090EEEB005CBCF2 /* SFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFButton.swift; sourceTree = "<group>"; };
-		F505D14E2090EF07005CBCF2 /* SFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTextField.swift; sourceTree = "<group>"; };
-		F505D1502090FD97005CBCF2 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		F505D1522090FE73005CBCF2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F557E68D2092181A004ECBD8 /* sfdesignables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sfdesignables.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F557E6902092181A004ECBD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F557E6922092181A004ECBD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F557E6952092181A004ECBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F557E6972092181D004ECBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F557E69A2092181D004ECBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F557E69C2092181D004ECBD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F557E6A220921869004ECBD8 /* SFView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFView.swift; sourceTree = "<group>"; };
+		F557E6A320921869004ECBD8 /* SFButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFButton.swift; sourceTree = "<group>"; };
+		F557E6A420921869004ECBD8 /* SFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFLabel.swift; sourceTree = "<group>"; };
+		F557E6A520921869004ECBD8 /* SFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFImageView.swift; sourceTree = "<group>"; };
+		F557E6A620921869004ECBD8 /* SFTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F505D1392090CFA1005CBCF2 /* Frameworks */ = {
+		F557E68A2092181A004ECBD8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,59 +45,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F505D1332090CFA1005CBCF2 = {
+		F557E6842092181A004ECBD8 = {
 			isa = PBXGroup;
 			children = (
-				F505D1502090FD97005CBCF2 /* LICENSE */,
-				F505D1522090FE73005CBCF2 /* README.md */,
-				F505D1482090D277005CBCF2 /* sfdesignables.podspec */,
-				F505D13F2090CFA1005CBCF2 /* sfdesignables */,
-				F505D13E2090CFA1005CBCF2 /* Products */,
+				F557E68F2092181A004ECBD8 /* sfdesignables */,
+				F557E68E2092181A004ECBD8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F505D13E2090CFA1005CBCF2 /* Products */ = {
+		F557E68E2092181A004ECBD8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F505D13D2090CFA1005CBCF2 /* sfdesignables.framework */,
+				F557E68D2092181A004ECBD8 /* sfdesignables.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F505D13F2090CFA1005CBCF2 /* sfdesignables */ = {
+		F557E68F2092181A004ECBD8 /* sfdesignables */ = {
 			isa = PBXGroup;
 			children = (
-				F505D1402090CFA1005CBCF2 /* sfdesignables.h */,
-				F505D1412090CFA1005CBCF2 /* Info.plist */,
-				F505D14A2090EEC6005CBCF2 /* SFView.swift */,
-				F505D14E2090EF07005CBCF2 /* SFTextField.swift */,
-				F505D14C2090EEEB005CBCF2 /* SFButton.swift */,
+				F582D4E3209BC2CC00FE6B7D /* Source */,
+				F557E6902092181A004ECBD8 /* AppDelegate.swift */,
+				F557E6922092181A004ECBD8 /* ViewController.swift */,
+				F557E6942092181A004ECBD8 /* Main.storyboard */,
+				F557E6972092181D004ECBD8 /* Assets.xcassets */,
+				F557E6992092181D004ECBD8 /* LaunchScreen.storyboard */,
+				F557E69C2092181D004ECBD8 /* Info.plist */,
 			);
 			path = sfdesignables;
 			sourceTree = "<group>";
 		};
+		F582D4E3209BC2CC00FE6B7D /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F557E6A320921869004ECBD8 /* SFButton.swift */,
+				F557E6A520921869004ECBD8 /* SFImageView.swift */,
+				F557E6A420921869004ECBD8 /* SFLabel.swift */,
+				F557E6A620921869004ECBD8 /* SFTextField.swift */,
+				F557E6A220921869004ECBD8 /* SFView.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		F505D13A2090CFA1005CBCF2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F505D1422090CFA1005CBCF2 /* sfdesignables.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		F505D13C2090CFA1005CBCF2 /* sfdesignables */ = {
+		F557E68C2092181A004ECBD8 /* sfdesignables */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F505D1452090CFA1005CBCF2 /* Build configuration list for PBXNativeTarget "sfdesignables" */;
+			buildConfigurationList = F557E69F2092181D004ECBD8 /* Build configuration list for PBXNativeTarget "sfdesignables" */;
 			buildPhases = (
-				F505D1382090CFA1005CBCF2 /* Sources */,
-				F505D1392090CFA1005CBCF2 /* Frameworks */,
-				F505D13A2090CFA1005CBCF2 /* Headers */,
-				F505D13B2090CFA1005CBCF2 /* Resources */,
+				F557E6892092181A004ECBD8 /* Sources */,
+				F557E68A2092181A004ECBD8 /* Frameworks */,
+				F557E68B2092181A004ECBD8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -98,68 +104,93 @@
 			);
 			name = sfdesignables;
 			productName = sfdesignables;
-			productReference = F505D13D2090CFA1005CBCF2 /* sfdesignables.framework */;
-			productType = "com.apple.product-type.framework";
+			productReference = F557E68D2092181A004ECBD8 /* sfdesignables.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F505D1342090CFA1005CBCF2 /* Project object */ = {
+		F557E6852092181A004ECBD8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = sudofluff;
 				TargetAttributes = {
-					F505D13C2090CFA1005CBCF2 = {
+					F557E68C2092181A004ECBD8 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
 					};
 				};
 			};
-			buildConfigurationList = F505D1372090CFA1005CBCF2 /* Build configuration list for PBXProject "sfdesignables" */;
+			buildConfigurationList = F557E6882092181A004ECBD8 /* Build configuration list for PBXProject "sfdesignables" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = F505D1332090CFA1005CBCF2;
-			productRefGroup = F505D13E2090CFA1005CBCF2 /* Products */;
+			mainGroup = F557E6842092181A004ECBD8;
+			productRefGroup = F557E68E2092181A004ECBD8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F505D13C2090CFA1005CBCF2 /* sfdesignables */,
+				F557E68C2092181A004ECBD8 /* sfdesignables */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F505D13B2090CFA1005CBCF2 /* Resources */ = {
+		F557E68B2092181A004ECBD8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F505D1512090FD97005CBCF2 /* LICENSE in Resources */,
-				F505D1492090D277005CBCF2 /* sfdesignables.podspec in Resources */,
+				F557E69B2092181D004ECBD8 /* LaunchScreen.storyboard in Resources */,
+				F557E6982092181D004ECBD8 /* Assets.xcassets in Resources */,
+				F557E6962092181A004ECBD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F505D1382090CFA1005CBCF2 /* Sources */ = {
+		F557E6892092181A004ECBD8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F505D14D2090EEEB005CBCF2 /* SFButton.swift in Sources */,
-				F505D14B2090EEC6005CBCF2 /* SFView.swift in Sources */,
-				F505D14F2090EF07005CBCF2 /* SFTextField.swift in Sources */,
+				F557E6932092181A004ECBD8 /* ViewController.swift in Sources */,
+				F557E6AA20921869004ECBD8 /* SFImageView.swift in Sources */,
+				F557E6912092181A004ECBD8 /* AppDelegate.swift in Sources */,
+				F557E6A920921869004ECBD8 /* SFLabel.swift in Sources */,
+				F557E6A820921869004ECBD8 /* SFButton.swift in Sources */,
+				F557E6A720921869004ECBD8 /* SFView.swift in Sources */,
+				F557E6AB20921869004ECBD8 /* SFTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		F557E6942092181A004ECBD8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F557E6952092181A004ECBD8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F557E6992092181D004ECBD8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F557E69A2092181D004ECBD8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		F505D1432090CFA1005CBCF2 /* Debug */ = {
+		F557E69D2092181D004ECBD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -193,7 +224,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -217,12 +247,10 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		F505D1442090CFA1005CBCF2 /* Release */ = {
+		F557E69E2092181D004ECBD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -256,7 +284,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -274,59 +301,40 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		F505D1462090CFA1005CBCF2 /* Debug */ = {
+		F557E6A02092181D004ECBD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KKSY22G5PE;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = sfdesignables/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sudofluff.sfdesignables;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		F505D1472090CFA1005CBCF2 /* Release */ = {
+		F557E6A12092181D004ECBD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = KKSY22G5PE;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = sfdesignables/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sudofluff.sfdesignables;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -335,25 +343,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F505D1372090CFA1005CBCF2 /* Build configuration list for PBXProject "sfdesignables" */ = {
+		F557E6882092181A004ECBD8 /* Build configuration list for PBXProject "sfdesignables" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F505D1432090CFA1005CBCF2 /* Debug */,
-				F505D1442090CFA1005CBCF2 /* Release */,
+				F557E69D2092181D004ECBD8 /* Debug */,
+				F557E69E2092181D004ECBD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F505D1452090CFA1005CBCF2 /* Build configuration list for PBXNativeTarget "sfdesignables" */ = {
+		F557E69F2092181D004ECBD8 /* Build configuration list for PBXNativeTarget "sfdesignables" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F505D1462090CFA1005CBCF2 /* Debug */,
-				F505D1472090CFA1005CBCF2 /* Release */,
+				F557E6A02092181D004ECBD8 /* Debug */,
+				F557E6A12092181D004ECBD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F505D1342090CFA1005CBCF2 /* Project object */;
+	rootObject = F557E6852092181A004ECBD8 /* Project object */;
 }
