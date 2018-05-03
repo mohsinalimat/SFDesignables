@@ -165,7 +165,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
                                         <real key="value" value="10.5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="maskToLayer" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="maskToLayer" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
