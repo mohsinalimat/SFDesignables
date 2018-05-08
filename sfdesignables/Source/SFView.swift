@@ -53,19 +53,27 @@ import UIKit
         }
     }
     
-    open var gradientLayer = CAGradientLayer()
-    
-    open func enableParallax(with magnitude: Float) {
-        let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffectType.tiltAlongHorizontalAxis)
-        xMotion.minimumRelativeValue = magnitude
-        xMotion.maximumRelativeValue = -magnitude
-        let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffectType.tiltAlongVerticalAxis)
-        yMotion.minimumRelativeValue = magnitude
-        yMotion.maximumRelativeValue = -magnitude
-        let group = UIMotionEffectGroup()
-        group.motionEffects = [xMotion, yMotion]
-        addMotionEffect(group)
+    @IBInspectable open var parallax: Float = 0 {
+        didSet {
+            let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffectType.tiltAlongHorizontalAxis)
+            xMotion.minimumRelativeValue = parallax
+            xMotion.maximumRelativeValue = -parallax
+            let yMotion = UIInterpolatingMotionEffect(keyPath: "center.y", type: UIInterpolatingMotionEffectType.tiltAlongVerticalAxis)
+            yMotion.minimumRelativeValue = parallax
+            yMotion.maximumRelativeValue = -parallax
+            let group = UIMotionEffectGroup()
+            group.motionEffects = [xMotion, yMotion]
+            if parallax != 0 {
+                addMotionEffect(group)
+            } else {
+                if self.motionEffects.count > 0 {
+                    removeMotionEffect(group)
+                }
+            }
+        }
     }
+    
+    open var gradientLayer = CAGradientLayer()
     
     private func setupGradientLayer() {
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
