@@ -9,58 +9,52 @@
 import UIKit
 
 @IBDesignable open class SFLabel: UILabel {
-    
+
     @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRaduis
             layer.masksToBounds = cornerRaduis > 0
         }
     }
-    
+
     @IBInspectable open var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
-    
+
     @IBInspectable open var borderColor: UIColor = UIColor.clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
     }
-    
+
     @IBInspectable open var startColor: UIColor = UIColor.lightGray {
         didSet {
             gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         }
     }
-    
+
     @IBInspectable open var endColor: UIColor = UIColor.darkGray {
         didSet {
             gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         }
     }
-    
+
     @IBInspectable open var startPoint: CGPoint = CGPoint(x: 0.5, y: 0.0) {
         didSet {
             gradientLayer.startPoint = startPoint
         }
     }
-    
+
     @IBInspectable open var endPoint: CGPoint = CGPoint(x: 0.5, y: 1.0) {
         didSet {
             gradientLayer.endPoint = endPoint
         }
     }
-    
-    @IBInspectable open var maskToLayer: Bool = false {
-        didSet {
-            self.layer.mask = self.maskToLayer ? gradientLayer : nil
-        }
-    }
-    
+
     open var gradientLayer = CAGradientLayer()
-    
+
     private func setupGradientLayer() {
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         gradientLayer.startPoint = startPoint
@@ -68,7 +62,7 @@ import UIKit
         gradientLayer.endPoint = endPoint
         layer.insertSublayer(gradientLayer, at: 0)
     }
-    
+
     @IBInspectable open var viewShadowColor: UIColor? {
         get {
             if let color = layer.shadowColor {
@@ -84,73 +78,66 @@ import UIKit
             }
         }
     }
-    
+
     @IBInspectable open var shadowOpacity: Float = 0 {
         didSet {
             layer.shadowOpacity = shadowOpacity
         }
     }
-    
+
     @IBInspectable open var shadowRadius: CGFloat = 0 {
         didSet {
             layer.shadowRadius = shadowRadius
         }
     }
-    
+
     @IBInspectable open var viewShadowOffset: CGSize = CGSize.zero {
         didSet {
             layer.shadowOffset = viewShadowOffset
         }
     }
-    
+
     private func setupShadow() {
         layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRaduis).cgPath
         layer.masksToBounds = shadowRadius >= 0 ? false : true
     }
-    
-    open var textLayer = CATextLayer()
-    
-    @IBInspectable open var hoverText: String? {
-        didSet {
-            if let text = hoverText {
-                textLayer.string = text
-            }
-        }
-    }
-    
-    private func setupTextLayer() {
-        textLayer.foregroundColor = textColor.cgColor
-        textLayer.fontSize = font.pointSize
-        textLayer.font = font
-        switch textAlignment {
-        case .center:
-            textLayer.alignmentMode = kCAAlignmentCenter
-        case .justified:
-            textLayer.alignmentMode = kCAAlignmentJustified
-        case .left:
-            textLayer.alignmentMode = kCAAlignmentLeft
-        case .right:
-            textLayer.alignmentMode = kCAAlignmentRight
-        case .natural:
-            textLayer.alignmentMode = kCAAlignmentNatural
-        }
-        layer.frame = frame
-        layer.insertSublayer(layer, at: 1)
-    }
-    
+
     // override
-    
+
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setupGradientLayer()
         setupShadow()
-        setupTextLayer()
     }
-    
+
     override open func layoutSubviews() {
         super.layoutSubviews()
         setupGradientLayer()
         setupShadow()
-        setupTextLayer()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -128,7 +128,6 @@
                         <segue destination="MxS-L0-Kdo" kind="relationship" relationship="viewControllers" id="834-Jy-ear"/>
                         <segue destination="7Ne-vo-r8g" kind="relationship" relationship="viewControllers" id="b3e-yr-Sz0"/>
                         <segue destination="tjB-zk-WLu" kind="relationship" relationship="viewControllers" id="KFD-xW-aye"/>
-                        <segue destination="XPg-WC-o4G" kind="relationship" relationship="viewControllers" id="BWy-L9-RVy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dp-dn-TSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -144,28 +143,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHc-rl-Bv0" customClass="SFLabel" customModule="sfdesignables" customModuleProvider="target">
-                                <rect key="frame" x="155" y="36" width="64" height="21"/>
+                                <rect key="frame" x="123" y="36" width="128" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="n2Z-ZF-RDx"/>
-                                    <constraint firstAttribute="width" constant="64" id="pF5-i8-lZT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="pF5-i8-lZT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
                                         <real key="value" value="10.5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="maskToLayer" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
@@ -189,7 +187,19 @@
                     <view key="view" contentMode="scaleToFill" id="yXQ-pw-QlV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMY-nq-qzY">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NMY-nq-qzY" firstAttribute="centerY" secondItem="yXQ-pw-QlV" secondAttribute="centerY" id="6V4-xb-giL"/>
+                            <constraint firstItem="NMY-nq-qzY" firstAttribute="centerX" secondItem="yXQ-pw-QlV" secondAttribute="centerX" id="xVm-Nj-3Ds"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="44V-Tb-FM1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="SFButton" id="y3t-V2-wn5"/>
@@ -205,7 +215,50 @@
                     <view key="view" contentMode="scaleToFill" id="7BP-Um-NDx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat_face" translatesAutoresizingMaskIntoConstraints="NO" id="MRX-pL-c6q" customClass="SFImageView" customModule="sfdesignables" customModuleProvider="target">
+                                <rect key="frame" x="123" y="269" width="128" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="4fz-5E-ubq"/>
+                                    <constraint firstAttribute="height" constant="128" id="VF6-Eo-9aV"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MRX-pL-c6q" firstAttribute="centerY" secondItem="7BP-Um-NDx" secondAttribute="centerY" id="Lbq-cf-Icl"/>
+                            <constraint firstItem="MRX-pL-c6q" firstAttribute="centerX" secondItem="7BP-Um-NDx" secondAttribute="centerX" id="XDo-ve-bOh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zyi-vD-VI0"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="SFImageView" id="pDC-Tc-m3d"/>
@@ -214,21 +267,8 @@
             </objects>
             <point key="canvasLocation" x="1053" y="1931"/>
         </scene>
-        <!--SFTF-->
-        <scene sceneID="Gw7-oF-l2d">
-            <objects>
-                <viewController id="XPg-WC-o4G" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kPI-R1-Usj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="AO4-Za-09E"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="SFTF" id="hmf-5e-K2d"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2NZ-wL-Oki" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1050" y="2670"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="Cat_face" width="640" height="553"/>
+    </resources>
 </document>
