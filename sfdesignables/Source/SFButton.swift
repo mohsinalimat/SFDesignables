@@ -80,6 +80,7 @@ import UIKit
     open var gradientLayer = CAGradientLayer()
     
     private func setupGradientLayer() {
+        gradientLayer.cornerRadius = cornerRaduis
         gradientLayer.frame = self.bounds
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         gradientLayer.startPoint = startPoint
