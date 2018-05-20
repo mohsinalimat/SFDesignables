@@ -10,6 +10,8 @@ import UIKit
 
 @IBDesignable open class SFImageView: UIImageView {
     
+    // MARK: - Border & Corners
+    
     @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRaduis
@@ -28,6 +30,8 @@ import UIKit
             layer.borderColor = borderColor.cgColor
         }
     }
+    
+    // MARK: - Gradient layer
     
     @IBInspectable open var startColor: UIColor = UIColor.lightGray {
         didSet {
@@ -53,6 +57,19 @@ import UIKit
         }
     }
     
+    open var gradientLayer = CAGradientLayer()
+    
+    private func setupGradientLayer() {
+        gradientLayer.cornerRadius = cornerRaduis
+        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        gradientLayer.startPoint = startPoint
+        gradientLayer.frame = self.bounds
+        gradientLayer.endPoint = endPoint
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    // MARK: - Parallax
+    
     @IBInspectable open var parallax: Float = 0 {
         didSet {
             let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffectType.tiltAlongHorizontalAxis)
@@ -73,16 +90,7 @@ import UIKit
         }
     }
     
-    open var gradientLayer = CAGradientLayer()
-    
-    private func setupGradientLayer() {
-        gradientLayer.cornerRadius = cornerRaduis
-        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
-        gradientLayer.startPoint = startPoint
-        gradientLayer.frame = self.bounds
-        gradientLayer.endPoint = endPoint
-        layer.insertSublayer(gradientLayer, at: 0)
-    }
+    // MARK: - Actions
     
     open func flash(delay: TimeInterval, duration: TimeInterval) {
         UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
@@ -100,7 +108,9 @@ import UIKit
         }, completion: nil)
     }
     
-    @IBInspectable open var shadowColor: UIColor? {
+    // MARK: - Shadows
+    
+    @IBInspectable open var viewShadowColor: UIColor? {
         get {
             if let color = layer.shadowColor {
                 return UIColor(cgColor: color)
@@ -128,9 +138,9 @@ import UIKit
         }
     }
     
-    @IBInspectable open var shadowOffset: CGSize = CGSize.zero {
+    @IBInspectable open var viewShadowOffset: CGSize = CGSize.zero {
         didSet {
-            layer.shadowOffset = shadowOffset
+            layer.shadowOffset = viewShadowOffset
         }
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable open class SFButton: UIButton {
     
-    // UIButton apis
+    // MAKR: - Border & Corners
     
     @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
@@ -30,6 +30,8 @@ import UIKit
             layer.borderColor = borderColor.cgColor
         }
     }
+    
+    // MARK: - Actions
     
     override open var isSelected: Bool {
         didSet {
@@ -51,7 +53,7 @@ import UIKit
         self.alpha = highlighted ? 0.7 : 1.0
     }
     
-    // gradient colors
+    // MARK: - Gradient layer
     
     @IBInspectable open var startColor: UIColor = UIColor.lightGray {
         didSet {
@@ -88,7 +90,7 @@ import UIKit
         layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    // shadow
+    // MARK: - Shadows
     
     @IBInspectable open var shadowColor: UIColor? {
         get {
@@ -129,7 +131,7 @@ import UIKit
         layer.masksToBounds = shadowRadius >= 0 ? false : true
     }
     
-    // override
+    // MARK: - Override
     
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()

@@ -112,6 +112,7 @@ import UIKit
     // MARK: - Text layer
     
     let textLayer = CATextLayer()
+    
     @IBInspectable open var textHeight: CGFloat = 0
     
     private func setupTextLayer() {

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F557E6912092181A004ECBD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6902092181A004ECBD8 /* AppDelegate.swift */; };
-		F557E6932092181A004ECBD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6922092181A004ECBD8 /* ViewController.swift */; };
+		F557E6932092181A004ECBD8 /* SFViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6922092181A004ECBD8 /* SFViewViewController.swift */; };
 		F557E6962092181A004ECBD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F557E6942092181A004ECBD8 /* Main.storyboard */; };
 		F557E6982092181D004ECBD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F557E6972092181D004ECBD8 /* Assets.xcassets */; };
 		F557E69B2092181D004ECBD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F557E6992092181D004ECBD8 /* LaunchScreen.storyboard */; };
@@ -17,12 +17,13 @@
 		F557E6A920921869004ECBD8 /* SFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6A420921869004ECBD8 /* SFLabel.swift */; };
 		F557E6AA20921869004ECBD8 /* SFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6A520921869004ECBD8 /* SFImageView.swift */; };
 		F557E6AB20921869004ECBD8 /* SFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6A620921869004ECBD8 /* SFTextField.swift */; };
+		F58F7B9220B22F3C00F28F4D /* SFTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F7B9120B22F3C00F28F4D /* SFTextFieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F557E68D2092181A004ECBD8 /* sfdesignables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sfdesignables.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F557E6902092181A004ECBD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F557E6922092181A004ECBD8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F557E6922092181A004ECBD8 /* SFViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFViewViewController.swift; sourceTree = "<group>"; };
 		F557E6952092181A004ECBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F557E6972092181D004ECBD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F557E69A2092181D004ECBD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +33,7 @@
 		F557E6A420921869004ECBD8 /* SFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFLabel.swift; sourceTree = "<group>"; };
 		F557E6A520921869004ECBD8 /* SFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFImageView.swift; sourceTree = "<group>"; };
 		F557E6A620921869004ECBD8 /* SFTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTextField.swift; sourceTree = "<group>"; };
+		F58F7B9120B22F3C00F28F4D /* SFTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTextFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,8 @@
 			children = (
 				F582D4E3209BC2CC00FE6B7D /* Source */,
 				F557E6902092181A004ECBD8 /* AppDelegate.swift */,
-				F557E6922092181A004ECBD8 /* ViewController.swift */,
+				F557E6922092181A004ECBD8 /* SFViewViewController.swift */,
+				F58F7B9120B22F3C00F28F4D /* SFTextFieldViewController.swift */,
 				F557E6942092181A004ECBD8 /* Main.storyboard */,
 				F557E6972092181D004ECBD8 /* Assets.xcassets */,
 				F557E6992092181D004ECBD8 /* LaunchScreen.storyboard */,
@@ -158,9 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F557E6932092181A004ECBD8 /* ViewController.swift in Sources */,
+				F557E6932092181A004ECBD8 /* SFViewViewController.swift in Sources */,
 				F557E6AA20921869004ECBD8 /* SFImageView.swift in Sources */,
 				F557E6912092181A004ECBD8 /* AppDelegate.swift in Sources */,
+				F58F7B9220B22F3C00F28F4D /* SFTextFieldViewController.swift in Sources */,
 				F557E6A920921869004ECBD8 /* SFLabel.swift in Sources */,
 				F557E6A820921869004ECBD8 /* SFButton.swift in Sources */,
 				F557E6A720921869004ECBD8 /* SFView.swift in Sources */,

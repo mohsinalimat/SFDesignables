@@ -8,13 +8,13 @@
 
 import UIKit
 
-@objc public protocol SDTextFieldRightButtonDelegate: NSObjectProtocol {
-    @objc optional func didTapButton(_ sender: UIButton)
+@objc public protocol SFTextFieldDelegate: NSObjectProtocol {
+    @objc optional func sfTextField(_ sfTextField: SFTextField, didTap rightButton: UIButton)
 }
 
 @IBDesignable open class SFTextField: UITextField {
     
-    // Animations & Physics
+    // MARK: - Actions
     
     open func jitter(repeatCount: Float, duration: TimeInterval) {
         let animation = CABasicAnimation(keyPath: "position")
@@ -26,9 +26,7 @@ import UIKit
         layer.add(animation, forKey: "position")
     }
     
-    // Generic UITextField & properties
-    
-    open weak var rightButtonDelegate: SDTextFieldRightButtonDelegate?
+    // MARK: - Border & Corners
     
     @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
@@ -56,7 +54,7 @@ import UIKit
         }
     }
     
-    // LeftView + UIImageView
+    // MARK: - LeftView + UIImageView
     
     @IBInspectable open var leftImage: UIImage? {
         didSet {
@@ -97,7 +95,9 @@ import UIKit
         }
     }
     
-    // RightView + UIButton
+    // MARK: - RightView + UIButton
+    
+    open weak var sfTextFieldDelegate: SFTextFieldDelegate?
     
     @IBInspectable open var rightButtonImage: UIImage? {
         didSet {
@@ -143,49 +143,45 @@ import UIKit
         }
     }
     
-    @objc open func rightButtonTapped() {
-        if let button = rightButton, let rightButtonDelegate = rightButtonDelegate {
-            rightButtonDelegate.didTapButton!(button)
+    @objc private func rightButtonTapped() {
+        if let button = rightButton, let rightButtonDelegate = sfTextFieldDelegate {
+            rightButtonDelegate.sfTextField?(self, didTap: button)
         }
     }
     
-    // GradientLayer
+    // MARK: - ActivityIndicator
     
-    @IBInspectable open var startColor: UIColor = UIColor.lightGray {
+    @IBInspectable open var activityIndicatorColor: UIColor = UIColor.white {
         didSet {
-            gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+            activityIndicatorView.tintColor = activityIndicatorColor
         }
     }
     
-    @IBInspectable open var endColor: UIColor = UIColor.darkGray {
-        didSet {
-            gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+    private var activityIndicatorView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        view.hidesWhenStopped = true
+        return view
+    }()
+    
+    open func startAnimating() {
+        if !isAnimating {
+            activityIndicatorView.startAnimating()
+            rightButton?.isHidden = true
         }
     }
     
-    @IBInspectable open var startPoint: CGPoint = CGPoint(x: 0.5, y: 0.0) {
-        didSet {
-            gradientLayer.startPoint = startPoint
+    open func stopAnimating() {
+        if isAnimating {
+            activityIndicatorView.stopAnimating()
+            rightButton?.isHidden = false
         }
     }
     
-    @IBInspectable open var endPoint: CGPoint = CGPoint(x: 0.5, y: 1.0) {
-        didSet {
-            gradientLayer.endPoint = endPoint
-        }
+    open var isAnimating: Bool {
+        return activityIndicatorView.isAnimating
     }
     
-    open var gradientLayer = CAGradientLayer()
-    
-    private func setupGradientLayer() {
-        gradientLayer.frame = self.bounds
-        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
-        gradientLayer.startPoint = startPoint
-        gradientLayer.endPoint = endPoint
-        layer.insertSublayer(gradientLayer, at: 0)
-    }
-    
-    // shadow
+    // MARK: - Shadows
     
     @IBInspectable open var shadowColor: UIColor? {
         get {
@@ -226,45 +222,15 @@ import UIKit
         layer.masksToBounds = shadowRadius >= 0 ? false : true
     }
     
-    // activity indicator
-    
-    @IBInspectable open var activityIndicatorColor: UIColor = UIColor.white {
-        didSet {
-            activityIndicatorView.tintColor = activityIndicatorColor
-        }
-    }
-    
-    private var activityIndicatorView: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        view.hidesWhenStopped = true
-        return view
-    }()
-    
-    open func startAnimating() {
-        activityIndicatorView.startAnimating()
-        rightButton?.isHidden = true
-    }
-    
-    open func stopAnimating() {
-        activityIndicatorView.stopAnimating()
-        rightButton?.isHidden = false
-    }
-    
-    open var isAnimating: Bool {
-        return activityIndicatorView.isAnimating
-    }
-    
-    // Lifecycle
+    // MARK: - Override
     
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        setupGradientLayer()
         setupShadow()
     }
     
     override open func layoutSubviews() {
         super.layoutSubviews()
-        setupGradientLayer()
         setupShadow()
     }
     
