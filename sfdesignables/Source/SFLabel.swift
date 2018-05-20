@@ -9,6 +9,8 @@
 import UIKit
 
 @IBDesignable open class SFLabel: UILabel {
+    
+    // MARK: - Border & Corners
 
     @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
@@ -28,6 +30,8 @@ import UIKit
             layer.borderColor = borderColor.cgColor
         }
     }
+    
+    // MARK: - Gradient layer
 
     @IBInspectable open var startColor: UIColor = UIColor.lightGray {
         didSet {
@@ -56,12 +60,15 @@ import UIKit
     open var gradientLayer = CAGradientLayer()
 
     private func setupGradientLayer() {
+        gradientLayer.cornerRadius = cornerRaduis
         gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
         gradientLayer.startPoint = startPoint
         gradientLayer.frame = self.bounds
         gradientLayer.endPoint = endPoint
         layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    // MARK: - Shadows
 
     @IBInspectable open var viewShadowColor: UIColor? {
         get {
@@ -101,18 +108,38 @@ import UIKit
         layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRaduis).cgPath
         layer.masksToBounds = shadowRadius >= 0 ? false : true
     }
+    
+    // MARK: - Text layer
+    
+    let textLayer = CATextLayer()
+    
+    @IBInspectable open var textHeight: CGFloat = 0
+    
+    private func setupTextLayer() {
+        let width = bounds.size.width
+        let height = bounds.size.height
+        textLayer.foregroundColor = textColor.cgColor
+        textLayer.string = text
+        textLayer.fontSize = font.pointSize
+        textLayer.font = font
+        textLayer.alignmentMode = kCAAlignmentCenter
+        textLayer.frame = CGRect(x: 0, y: textHeight, width: width, height: height)
+        layer.insertSublayer(textLayer, at: 1)
+    }
 
-    // override
+    // MARK: - Override
 
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setupGradientLayer()
+        setupTextLayer()
         setupShadow()
     }
 
     override open func layoutSubviews() {
         super.layoutSubviews()
         setupGradientLayer()
+        setupTextLayer()
         setupShadow()
     }
 }

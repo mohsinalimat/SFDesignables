@@ -10,6 +10,8 @@ import UIKit
 
 @IBDesignable open class SFView: UIView {
     
+    // MARK: - Border & Corners
+    
     @IBInspectable open var cornerRaduis: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRaduis
@@ -28,6 +30,8 @@ import UIKit
             layer.borderColor = borderColor.cgColor
         }
     }
+    
+    // MARK: - Gradient layer
     
     @IBInspectable open var startColor: UIColor = UIColor.lightGray {
         didSet {
@@ -53,6 +57,19 @@ import UIKit
         }
     }
     
+    open var gradientLayer = CAGradientLayer()
+    
+    private func setupGradientLayer() {
+        gradientLayer.cornerRadius = cornerRaduis
+        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+        gradientLayer.startPoint = startPoint
+        gradientLayer.frame = self.bounds
+        gradientLayer.endPoint = endPoint
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    // MARK: - Parallax
+    
     @IBInspectable open var parallax: Float = 0 {
         didSet {
             let xMotion = UIInterpolatingMotionEffect(keyPath: "center.x", type: UIInterpolatingMotionEffectType.tiltAlongHorizontalAxis)
@@ -73,15 +90,7 @@ import UIKit
         }
     }
     
-    open var gradientLayer = CAGradientLayer()
-    
-    private func setupGradientLayer() {
-        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
-        gradientLayer.startPoint = startPoint
-        gradientLayer.frame = self.bounds
-        gradientLayer.endPoint = endPoint
-        layer.insertSublayer(gradientLayer, at: 0)
-    }
+    // MARK: - Actions
     
     open func flash(delay: TimeInterval, duration: TimeInterval) {
         UIView.animate(withDuration: duration, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
@@ -102,6 +111,8 @@ import UIKit
         animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 5.0, y: self.center.y))
         layer.add(animation, forKey: "position")
     }
+    
+    // MARK: - Shadows
     
     @IBInspectable open var shadowColor: UIColor? {
         get {
@@ -142,7 +153,7 @@ import UIKit
         layer.masksToBounds = shadowRadius >= 0 ? false : true
     }
     
-    // override
+    // MARK: - Override
     
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
