@@ -97,7 +97,7 @@ import UIKit
     
     // MARK: - RightView + UIButton
     
-    open weak var sfTextFieldDelegate: SFTextFieldDelegate?
+    open weak var sfDelegate: SFTextFieldDelegate?
     
     @IBInspectable open var rightButtonImage: UIImage? {
         didSet {
@@ -144,7 +144,7 @@ import UIKit
     }
     
     @objc private func rightButtonTapped() {
-        if let button = rightButton, let rightButtonDelegate = sfTextFieldDelegate {
+        if let button = rightButton, let rightButtonDelegate = sfDelegate {
             rightButtonDelegate.sfTextField?(self, didTap: button)
         }
     }

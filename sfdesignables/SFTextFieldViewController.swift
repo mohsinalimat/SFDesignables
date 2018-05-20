@@ -14,7 +14,7 @@ class SFTextFieldViewController: UIViewController, SFTextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textField.sfTextFieldDelegate = self
+        textField.sfDelegate = self
     }
     
     func sfTextField(_ sfTextField: SFTextField, didTap rightButton: UIButton) {
