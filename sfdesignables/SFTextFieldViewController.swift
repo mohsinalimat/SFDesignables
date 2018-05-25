@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SFTextFieldViewController: UIViewController, SFTextFieldDelegate {
+class SFTextFieldViewController: UIViewController {
     
     @IBOutlet weak var textField: SFTextField!
     
@@ -17,8 +17,12 @@ class SFTextFieldViewController: UIViewController, SFTextFieldDelegate {
         textField.sfDelegate = self
     }
     
+}
+
+extension SFTextFieldViewController: SFTextFieldDelegate {
+    
     func sfTextField(_ sfTextField: SFTextField, didTap rightButton: UIButton) {
-        print(123)
+        sfTextField.jitter(repeatCount: 5, duration: 1)
     }
     
 }

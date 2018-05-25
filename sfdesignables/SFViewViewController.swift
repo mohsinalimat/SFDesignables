@@ -10,15 +10,35 @@ import UIKit
 
 class SFViewViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    private let shapeLayer = CAShapeLayer()
+    private let strokeAnimation = CABasicAnimation(keyPath: "strokeEnd")
+    private var duration: CFTimeInterval = 2
+    
+    func stroke(_ toValue: CGFloat) {
+        strokeAnimation.toValue = toValue
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func set(_ animationDuration: CFTimeInterval) {
+        self.duration = animationDuration
     }
-
+    
+    private func setupLayer(block: () -> Void) {
+        let center = view.center
+        let π = CGFloat.pi
+        let radius: CGFloat = 100
+        let circularPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: 2*π, clockwise: true)
+        shapeLayer.path = circularPath.cgPath
+        shapeLayer.strokeColor = UIColor.red.cgColor
+        shapeLayer.lineWidth = 10
+        shapeLayer.strokeEnd = 0
+        view.layer.addSublayer(shapeLayer)
+        block()
+    }
+    
+    private func setupAnimation() {
+        self.strokeAnimation.fillMode = kCAFillModeForwards
+        self.strokeAnimation.isRemovedOnCompletion = false
+        self.shapeLayer.add(strokeAnimation, forKey: "strokeAnimation")
+    }
 
 }

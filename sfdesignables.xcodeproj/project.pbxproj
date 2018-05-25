@@ -18,6 +18,10 @@
 		F557E6AA20921869004ECBD8 /* SFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6A520921869004ECBD8 /* SFImageView.swift */; };
 		F557E6AB20921869004ECBD8 /* SFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F557E6A620921869004ECBD8 /* SFTextField.swift */; };
 		F58F7B9220B22F3C00F28F4D /* SFTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F7B9120B22F3C00F28F4D /* SFTextFieldViewController.swift */; };
+		F5BD9BD320B53F9A00D79941 /* SFImageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD9BD220B53F9A00D79941 /* SFImageViewViewController.swift */; };
+		F5BD9BD520B71C3A00D79941 /* SFTextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD9BD420B71C3A00D79941 /* SFTextViewViewController.swift */; };
+		F5BD9BD720B71C9000D79941 /* SFTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD9BD620B71C9000D79941 /* SFTextView.swift */; };
+		F5BD9BD920B7A67F00D79941 /* SFActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD9BD820B7A67F00D79941 /* SFActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		F557E6A520921869004ECBD8 /* SFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFImageView.swift; sourceTree = "<group>"; };
 		F557E6A620921869004ECBD8 /* SFTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFTextField.swift; sourceTree = "<group>"; };
 		F58F7B9120B22F3C00F28F4D /* SFTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTextFieldViewController.swift; sourceTree = "<group>"; };
+		F5BD9BD220B53F9A00D79941 /* SFImageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFImageViewViewController.swift; sourceTree = "<group>"; };
+		F5BD9BD420B71C3A00D79941 /* SFTextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTextViewViewController.swift; sourceTree = "<group>"; };
+		F5BD9BD620B71C9000D79941 /* SFTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTextView.swift; sourceTree = "<group>"; };
+		F5BD9BD820B7A67F00D79941 /* SFActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,8 @@
 				F557E6902092181A004ECBD8 /* AppDelegate.swift */,
 				F557E6922092181A004ECBD8 /* SFViewViewController.swift */,
 				F58F7B9120B22F3C00F28F4D /* SFTextFieldViewController.swift */,
+				F5BD9BD420B71C3A00D79941 /* SFTextViewViewController.swift */,
+				F5BD9BD220B53F9A00D79941 /* SFImageViewViewController.swift */,
 				F557E6942092181A004ECBD8 /* Main.storyboard */,
 				F557E6972092181D004ECBD8 /* Assets.xcassets */,
 				F557E6992092181D004ECBD8 /* LaunchScreen.storyboard */,
@@ -86,6 +96,8 @@
 				F557E6A420921869004ECBD8 /* SFLabel.swift */,
 				F557E6A620921869004ECBD8 /* SFTextField.swift */,
 				F557E6A220921869004ECBD8 /* SFView.swift */,
+				F5BD9BD620B71C9000D79941 /* SFTextView.swift */,
+				F5BD9BD820B7A67F00D79941 /* SFActivityIndicatorView.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -162,13 +174,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F557E6932092181A004ECBD8 /* SFViewViewController.swift in Sources */,
+				F5BD9BD320B53F9A00D79941 /* SFImageViewViewController.swift in Sources */,
 				F557E6AA20921869004ECBD8 /* SFImageView.swift in Sources */,
+				F5BD9BD520B71C3A00D79941 /* SFTextViewViewController.swift in Sources */,
+				F5BD9BD720B71C9000D79941 /* SFTextView.swift in Sources */,
 				F557E6912092181A004ECBD8 /* AppDelegate.swift in Sources */,
 				F58F7B9220B22F3C00F28F4D /* SFTextFieldViewController.swift in Sources */,
 				F557E6A920921869004ECBD8 /* SFLabel.swift in Sources */,
 				F557E6A820921869004ECBD8 /* SFButton.swift in Sources */,
 				F557E6A720921869004ECBD8 /* SFView.swift in Sources */,
 				F557E6AB20921869004ECBD8 /* SFTextField.swift in Sources */,
+				F5BD9BD920B7A67F00D79941 /* SFActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

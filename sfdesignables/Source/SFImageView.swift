@@ -149,7 +149,7 @@ import UIKit
         layer.masksToBounds = shadowRadius >= 0 ? false : true
     }
     
-    // override
+    // MARK: - Override
     
     override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
