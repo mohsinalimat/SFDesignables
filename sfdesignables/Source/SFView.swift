@@ -57,7 +57,7 @@ import UIKit
         }
     }
     
-    open var gradientLayer = CAGradientLayer()
+    private var gradientLayer = CAGradientLayer()
     
     private func setupGradientLayer() {
         gradientLayer.cornerRadius = cornerRaduis
