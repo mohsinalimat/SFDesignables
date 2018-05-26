@@ -22,6 +22,8 @@
 		F5BD9BD520B71C3A00D79941 /* SFTextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD9BD420B71C3A00D79941 /* SFTextViewViewController.swift */; };
 		F5BD9BD720B71C9000D79941 /* SFTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD9BD620B71C9000D79941 /* SFTextView.swift */; };
 		F5BD9BD920B7A67F00D79941 /* SFActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD9BD820B7A67F00D79941 /* SFActivityIndicatorView.swift */; };
+		F5BD9BDB20B93EF900D79941 /* SFButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD9BDA20B93EF900D79941 /* SFButtonViewController.swift */; };
+		F5BD9BDD20B9CC7A00D79941 /* SFButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BD9BDC20B9CC7A00D79941 /* SFButton2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		F5BD9BD420B71C3A00D79941 /* SFTextViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTextViewViewController.swift; sourceTree = "<group>"; };
 		F5BD9BD620B71C9000D79941 /* SFTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTextView.swift; sourceTree = "<group>"; };
 		F5BD9BD820B7A67F00D79941 /* SFActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFActivityIndicatorView.swift; sourceTree = "<group>"; };
+		F5BD9BDA20B93EF900D79941 /* SFButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFButtonViewController.swift; sourceTree = "<group>"; };
+		F5BD9BDC20B9CC7A00D79941 /* SFButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFButton2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 		F557E6842092181A004ECBD8 = {
 			isa = PBXGroup;
 			children = (
+				F582D4E3209BC2CC00FE6B7D /* Source */,
 				F557E68F2092181A004ECBD8 /* sfdesignables */,
 				F557E68E2092181A004ECBD8 /* Products */,
 			);
@@ -74,10 +79,10 @@
 		F557E68F2092181A004ECBD8 /* sfdesignables */ = {
 			isa = PBXGroup;
 			children = (
-				F582D4E3209BC2CC00FE6B7D /* Source */,
 				F557E6902092181A004ECBD8 /* AppDelegate.swift */,
 				F557E6922092181A004ECBD8 /* SFViewViewController.swift */,
 				F58F7B9120B22F3C00F28F4D /* SFTextFieldViewController.swift */,
+				F5BD9BDA20B93EF900D79941 /* SFButtonViewController.swift */,
 				F5BD9BD420B71C3A00D79941 /* SFTextViewViewController.swift */,
 				F5BD9BD220B53F9A00D79941 /* SFImageViewViewController.swift */,
 				F557E6942092181A004ECBD8 /* Main.storyboard */,
@@ -92,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				F557E6A320921869004ECBD8 /* SFButton.swift */,
+				F5BD9BDC20B9CC7A00D79941 /* SFButton2.swift */,
 				F557E6A520921869004ECBD8 /* SFImageView.swift */,
 				F557E6A420921869004ECBD8 /* SFLabel.swift */,
 				F557E6A620921869004ECBD8 /* SFTextField.swift */,
@@ -182,9 +188,11 @@
 				F58F7B9220B22F3C00F28F4D /* SFTextFieldViewController.swift in Sources */,
 				F557E6A920921869004ECBD8 /* SFLabel.swift in Sources */,
 				F557E6A820921869004ECBD8 /* SFButton.swift in Sources */,
+				F5BD9BDB20B93EF900D79941 /* SFButtonViewController.swift in Sources */,
 				F557E6A720921869004ECBD8 /* SFView.swift in Sources */,
 				F557E6AB20921869004ECBD8 /* SFTextField.swift in Sources */,
 				F5BD9BD920B7A67F00D79941 /* SFActivityIndicatorView.swift in Sources */,
+				F5BD9BDD20B9CC7A00D79941 /* SFButton2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
