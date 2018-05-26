@@ -126,21 +126,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0V-3C-1Qa" customClass="SFActivityIndicatorView" customModule="sfdesignables" customModuleProvider="target">
-                                <rect key="frame" x="155.5" y="484" width="64" height="64"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="YRt-Yn-niK"/>
-                                    <constraint firstAttribute="width" constant="64" id="vTQ-MP-EZm"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Bmw-0h-3uX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DEx-yx-PzP"/>
-                            <constraint firstItem="o0V-3C-1Qa" firstAttribute="top" secondItem="mTK-aB-Kw4" secondAttribute="bottom" constant="16" id="SW1-PH-f9s"/>
                             <constraint firstItem="bMI-ea-i1A" firstAttribute="top" secondItem="Bmw-0h-3uX" secondAttribute="bottom" constant="16" id="UCc-TA-l1R"/>
-                            <constraint firstItem="o0V-3C-1Qa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WI4-ZC-xVN"/>
                             <constraint firstItem="mTK-aB-Kw4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c1x-pR-iFJ"/>
                             <constraint firstItem="mTK-aB-Kw4" firstAttribute="top" secondItem="bMI-ea-i1A" secondAttribute="bottom" constant="16" id="mPL-65-rV6"/>
                             <constraint firstItem="Bmw-0h-3uX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="sjU-G5-HSu"/>
@@ -392,7 +382,7 @@
         <!--SFButton-->
         <scene sceneID="XOK-4f-PKg">
             <objects>
-                <viewController id="7Ne-vo-r8g" sceneMemberID="viewController">
+                <viewController id="7Ne-vo-r8g" customClass="SFButtonViewController" customModule="sfdesignables" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yXQ-pw-QlV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -437,9 +427,39 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZEy-0X-snH" customClass="SFButton2" customModule="sfdesignables" customModuleProvider="target">
+                                <rect key="frame" x="123" y="112" width="128" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="jNb-jv-j1e"/>
+                                    <constraint firstAttribute="width" constant="128" id="qUt-IM-2xw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Folder"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRaduis">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="Open It!"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorOnTouchDown">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorOnTouchRelease">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="7Ne-vo-r8g" eventType="valueChanged" id="GvF-Wf-Yp1"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZEy-0X-snH" firstAttribute="centerX" secondItem="yXQ-pw-QlV" secondAttribute="centerX" id="Leo-fh-UiL"/>
+                            <constraint firstItem="ZEy-0X-snH" firstAttribute="top" secondItem="13a-4Z-CQJ" secondAttribute="bottom" constant="16" id="LlG-5W-DBM"/>
                             <constraint firstItem="13a-4Z-CQJ" firstAttribute="centerX" secondItem="yXQ-pw-QlV" secondAttribute="centerX" id="YmL-Uv-Rcf"/>
                             <constraint firstItem="13a-4Z-CQJ" firstAttribute="top" secondItem="44V-Tb-FM1" secondAttribute="top" constant="32" id="eY6-e0-Cjh"/>
                         </constraints>
