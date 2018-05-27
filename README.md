@@ -2,11 +2,11 @@
 
 SFDesignables is a collection of custom UIView subclasses that come with supports for storyboard.
 
-- [Getting stated](#Getting started)
-- [Credits](#Credits)
-- [License](#License)
+- [Getting Stated](#getting-stated)
+- [Credits](#credits)
+- [License](#license)
 
-## Getting started
+## Getting Started
 
 ### Cocoapods
 
