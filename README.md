@@ -14,4 +14,4 @@ sudofluff
 
 ## License
 
-This project is licensed under MIT License - see [LICENSE][LICENSE] file for details.
+This project is licensed under MIT License - see [LICENSE](https://github.com/sudofluff/SFDesignables/blob/master/LICENSE) file for details.
