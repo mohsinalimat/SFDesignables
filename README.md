@@ -1,4 +1,4 @@
-![SFDesignables: Elegant way to design your UI in storyboard](https://raw.githubusercontent.com/sudofluff/SSFDesignables/develop/sfdesignables.pdf)
+![SFDesignables: Elegant way to design your UI in storyboard](sfdesignables.png)
 
 SFDesignables is a collection of custom UIView subclasses that come with supports for storyboard.
 
