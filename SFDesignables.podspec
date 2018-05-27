@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SFDesignables'
-  s.version = '0.1.1'
+  s.version = '0.1.2'
   s.summary = 'A collection of @IBdesignable classes for storyboarding.'
   s.homepage = 'https://github.com/sudofluff/SFDesignables'
   s.swift_version = '4.1.0'
