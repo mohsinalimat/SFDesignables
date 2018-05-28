@@ -97,7 +97,7 @@ import UIKit
     
     // MARK: - RightView + UIButton
     
-    open weak var sfDelegate: SFTextFieldDelegate?
+    weak var sfDelegate: SFTextFieldDelegate?
     
     @IBInspectable open var rightButtonImage: UIImage? {
         didSet {
@@ -151,9 +151,12 @@ import UIKit
     
     // MARK: - ActivityIndicator
     
-    @IBInspectable open var activityIndicatorColor: UIColor = UIColor.white {
-        didSet {
-            activityIndicatorView.tintColor = activityIndicatorColor
+    @IBInspectable open var activityIndicatorColor: UIColor? {
+        get {
+            return activityIndicatorView.color
+        }
+        set {
+            activityIndicatorView.color = newValue
         }
     }
     
@@ -166,14 +169,14 @@ import UIKit
     open func startAnimating() {
         if !isAnimating {
             activityIndicatorView.startAnimating()
-            rightButton?.isHidden = true
+            rightButton?.alpha = 0
         }
     }
     
     open func stopAnimating() {
         if isAnimating {
             activityIndicatorView.stopAnimating()
-            rightButton?.isHidden = false
+            rightButton?.alpha = 1
         }
     }
     
