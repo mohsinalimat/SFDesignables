@@ -80,6 +80,15 @@ import UIKit
         }
     }
     
+    @IBInspectable open var fontSize: CGFloat {
+        get {
+            return label.font.pointSize
+        }
+        set {
+            label.font = UIFont.systemFont(ofSize: newValue)
+        }
+    }
+    
     @IBInspectable open var cornerRaduis: CGFloat {
         get {
             return layer.cornerRadius
@@ -125,8 +134,8 @@ import UIKit
     
     // MARK: - Touch events
     
-    @IBInspectable open var backgroundColorOnTouchDown: UIColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
-    @IBInspectable open var backgroundColorOnTouchRelease: UIColor = UIColor(red: 0.47, green: 0.84, blue: 0.98, alpha: 1) {
+    @IBInspectable open var backgroundColorOnTouchDown: UIColor = UIColor(red: 154 / 255, green: 154 / 255, blue: 154 / 255, alpha: 1)
+    @IBInspectable open var backgroundColorOnTouchRelease: UIColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1) {
         didSet {
             backgroundColor = backgroundColorOnTouchRelease
         }
@@ -136,7 +145,7 @@ import UIKit
         let (duration, backgroundColor, labelIsHidden) = (isPressed ? (duration: 0.05, backgroundColor: backgroundColorOnTouchDown, labelIsHidden: true) : (duration: 0.1, backgroundColor: backgroundColorOnTouchRelease, labelIsHidden: false))
         UIView.animate(withDuration: duration) {
             self.backgroundColor = backgroundColor
-//            self.label.isHidden = labelIsHidden
+            self.label.isHidden = labelIsHidden
             self.label.alpha = labelIsHidden ? 0.5 : 1.0
         }
     }
